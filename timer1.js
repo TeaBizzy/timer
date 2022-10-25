@@ -10,7 +10,8 @@ const createTimers = function() {
   for (const argument of args) {
     let timer = Number(argument);
     if (isNaN(timer) || timer <= 0) {
-      return;
+      console.log(`${argument} is not a valid number!`);
+      continue;
     }
     timer *= 1000;
     setTimeout(() => process.stdout.write("\007"), timer);
